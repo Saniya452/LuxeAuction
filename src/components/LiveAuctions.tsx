@@ -13,6 +13,7 @@ const LiveAuctions = () => {
       title: "1967 Porsche 911S",
       image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       currentBid: 85000,
+      reservePrice: 95000,
       timeLeft: new Date(Date.now() + 2 * 60 * 60 * 1000), // 2 hours
       totalBids: 24,
       isLive: true
@@ -22,6 +23,7 @@ const LiveAuctions = () => {
       title: "2022 McLaren 720S",
       image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       currentBid: 245000,
+      reservePrice: 275000,
       timeLeft: new Date(Date.now() + 5 * 60 * 60 * 1000), // 5 hours
       totalBids: 18,
       isLive: true
@@ -31,6 +33,7 @@ const LiveAuctions = () => {
       title: "1969 Dodge Charger R/T",
       image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       currentBid: 72000,
+      reservePrice: 85000,
       timeLeft: new Date(Date.now() + 8 * 60 * 60 * 1000), // 8 hours
       totalBids: 31,
       isLive: true
@@ -69,18 +72,19 @@ const LiveAuctions = () => {
                 <h3 className="text-xl font-semibold mb-3">{auction.title}</h3>
                 
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Current Bid</span>
-                    <span className="text-2xl font-bold text-primary">
-                      ${auction.currentBid.toLocaleString()}
-                    </span>
-                  </div>
-                  
-                  <BidProgress currentBid={auction.currentBid} totalBids={auction.totalBids} />
+                  <BidProgress 
+                    currentBid={auction.currentBid} 
+                    reservePrice={auction.reservePrice} 
+                  />
                   
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground mb-2">Time Remaining</p>
                     <CountdownTimer targetDate={auction.timeLeft} />
+                  </div>
+                  
+                  <div className="flex justify-between items-center text-sm text-muted-foreground">
+                    <span>{auction.totalBids} bids</span>
+                    <span>Reserve: ${auction.reservePrice.toLocaleString()}</span>
                   </div>
                   
                   <Button className="w-full bg-luxury-gold hover:bg-luxury-gold-dark text-black font-semibold">

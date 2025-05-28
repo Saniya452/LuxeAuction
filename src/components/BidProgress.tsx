@@ -9,14 +9,18 @@ interface BidProgressProps {
 }
 
 const BidProgress: React.FC<BidProgressProps> = ({ currentBid, reservePrice, className = '' }) => {
-  const progress = Math.min((currentBid / reservePrice) * 100, 100);
-  const formatPrice = (price: number) => `$${price.toLocaleString()}`;
+  // Add safety checks for undefined values
+  const safeBid = currentBid || 0;
+  const safeReserve = reservePrice || 1; // Prevent division by zero
+  
+  const progress = Math.min((safeBid / safeReserve) * 100, 100);
+  const formatPrice = (price: number) => `$${(price || 0).toLocaleString()}`;
 
   return (
     <div className={`space-y-3 ${className}`}>
       <div className="flex justify-between items-center">
         <span className="text-sm text-foreground/60">Current Bid</span>
-        <span className="text-lg font-bold text-luxury-gold">{formatPrice(currentBid)}</span>
+        <span className="text-lg font-bold text-luxury-gold">{formatPrice(safeBid)}</span>
       </div>
       
       <Progress 
@@ -25,7 +29,7 @@ const BidProgress: React.FC<BidProgressProps> = ({ currentBid, reservePrice, cla
       />
       
       <div className="flex justify-between items-center text-sm">
-        <span className="text-foreground/60">Reserve: {formatPrice(reservePrice)}</span>
+        <span className="text-foreground/60">Reserve: {formatPrice(safeReserve)}</span>
         <span className="text-foreground/80">{progress.toFixed(1)}% of reserve</span>
       </div>
     </div>
