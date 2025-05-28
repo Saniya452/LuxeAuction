@@ -2,6 +2,16 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import LiveAuctions from '@/components/LiveAuctions';
+import FeaturedCars from '@/components/FeaturedCars';
+import HowItWorks from '@/components/HowItWorks';
+import TrustSection from '@/components/TrustSection';
+import Testimonials from '@/components/Testimonials';
+import SellYourCar from '@/components/SellYourCar';
+import RecentlySold from '@/components/RecentlySold';
+import FAQ from '@/components/FAQ';
+import Newsletter from '@/components/Newsletter';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
@@ -35,6 +45,16 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar isDark={isDark} onThemeToggle={toggleTheme} />
       <HeroSection />
+      <LiveAuctions />
+      <FeaturedCars />
+      <HowItWorks />
+      <TrustSection />
+      <Testimonials />
+      <SellYourCar />
+      <RecentlySold />
+      <FAQ />
+      <Newsletter />
+      <Footer isDark={isDark} onThemeToggle={toggleTheme} />
     </div>
   );
 };
