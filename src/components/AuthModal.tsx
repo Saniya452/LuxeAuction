@@ -25,7 +25,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ children, defaultView = 'login' }
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-sm border-0 bg-transparent shadow-none p-0">
+      <DialogContent className="max-w-xs border-0 bg-transparent shadow-none p-0">
         {currentView === 'login' ? (
           <LoginForm onSwitchToRegister={switchToRegister} />
         ) : (

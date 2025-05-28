@@ -31,44 +31,44 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
   };
 
   return (
-    <Card className="w-full max-w-sm mx-auto glass-effect border-white/20">
-      <CardHeader className="text-center pb-4">
-        <CardTitle className="text-xl font-bold gradient-text">Join LuxeAuction</CardTitle>
-        <CardDescription className="text-sm">Create your account</CardDescription>
+    <Card className="w-full max-w-xs mx-auto glass-effect border-white/20">
+      <CardHeader className="text-center pb-2">
+        <CardTitle className="text-lg font-bold gradient-text">Join LuxeAuction</CardTitle>
+        <CardDescription className="text-xs">Create your account</CardDescription>
       </CardHeader>
       
-      <CardContent className="pb-4">
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
-          <div className="grid grid-cols-2 gap-2">
-            <div className="space-y-1">
-              <Label htmlFor="firstName" className="text-sm">First Name</Label>
+      <CardContent className="pb-2">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
+          <div className="grid grid-cols-2 gap-1.5">
+            <div className="space-y-0.5">
+              <Label htmlFor="firstName" className="text-xs">First Name</Label>
               <Input
                 id="firstName"
                 placeholder="John"
                 {...register('firstName', { required: 'First name is required' })}
-                className="bg-background/50 h-9"
+                className="bg-background/50 h-7 text-xs"
               />
               {errors.firstName && (
-                <p className="text-xs text-red-500">{errors.firstName.message}</p>
+                <p className="text-[10px] text-red-500">{errors.firstName.message}</p>
               )}
             </div>
             
-            <div className="space-y-1">
-              <Label htmlFor="lastName" className="text-sm">Last Name</Label>
+            <div className="space-y-0.5">
+              <Label htmlFor="lastName" className="text-xs">Last Name</Label>
               <Input
                 id="lastName"
                 placeholder="Doe"
                 {...register('lastName', { required: 'Last name is required' })}
-                className="bg-background/50 h-9"
+                className="bg-background/50 h-7 text-xs"
               />
               {errors.lastName && (
-                <p className="text-xs text-red-500">{errors.lastName.message}</p>
+                <p className="text-[10px] text-red-500">{errors.lastName.message}</p>
               )}
             </div>
           </div>
           
-          <div className="space-y-1">
-            <Label htmlFor="email" className="text-sm">Email</Label>
+          <div className="space-y-0.5">
+            <Label htmlFor="email" className="text-xs">Email</Label>
             <Input
               id="email"
               type="email"
@@ -80,19 +80,19 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
                   message: 'Invalid email address'
                 }
               })}
-              className="bg-background/50 h-9"
+              className="bg-background/50 h-7 text-xs"
             />
             {errors.email && (
-              <p className="text-xs text-red-500">{errors.email.message}</p>
+              <p className="text-[10px] text-red-500">{errors.email.message}</p>
             )}
           </div>
           
-          <div className="space-y-1">
-            <Label htmlFor="password" className="text-sm">Password</Label>
+          <div className="space-y-0.5">
+            <Label htmlFor="password" className="text-xs">Password</Label>
             <Input
               id="password"
               type="password"
-              placeholder="Create a password"
+              placeholder="Password"
               {...register('password', { 
                 required: 'Password is required',
                 minLength: {
@@ -100,15 +100,15 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
                   message: 'Password must be at least 8 characters'
                 }
               })}
-              className="bg-background/50 h-9"
+              className="bg-background/50 h-7 text-xs"
             />
             {errors.password && (
-              <p className="text-xs text-red-500">{errors.password.message}</p>
+              <p className="text-[10px] text-red-500">{errors.password.message}</p>
             )}
           </div>
           
-          <div className="space-y-1">
-            <Label htmlFor="confirmPassword" className="text-sm">Confirm Password</Label>
+          <div className="space-y-0.5">
+            <Label htmlFor="confirmPassword" className="text-xs">Confirm Password</Label>
             <Input
               id="confirmPassword"
               type="password"
@@ -117,54 +117,55 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
                 required: 'Please confirm your password',
                 validate: value => value === password || 'Passwords do not match'
               })}
-              className="bg-background/50 h-9"
+              className="bg-background/50 h-7 text-xs"
             />
             {errors.confirmPassword && (
-              <p className="text-xs text-red-500">{errors.confirmPassword.message}</p>
+              <p className="text-[10px] text-red-500">{errors.confirmPassword.message}</p>
             )}
           </div>
           
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1.5 py-1">
             <Checkbox
               id="acceptTerms"
               {...register('acceptTerms', { required: 'You must accept the terms' })}
+              className="h-3 w-3"
             />
-            <Label htmlFor="acceptTerms" className="text-xs">
+            <Label htmlFor="acceptTerms" className="text-[10px] leading-tight">
               I agree to the{' '}
-              <Button variant="link" className="p-0 h-auto text-primary text-xs">
+              <Button variant="link" className="p-0 h-auto text-primary text-[10px]">
                 Terms
               </Button>
               {' '}and{' '}
-              <Button variant="link" className="p-0 h-auto text-primary text-xs">
+              <Button variant="link" className="p-0 h-auto text-primary text-[10px]">
                 Privacy Policy
               </Button>
             </Label>
           </div>
           {errors.acceptTerms && (
-            <p className="text-xs text-red-500">{errors.acceptTerms.message}</p>
+            <p className="text-[10px] text-red-500">{errors.acceptTerms.message}</p>
           )}
           
-          <Button type="submit" className="w-full bg-luxury-gold hover:bg-luxury-gold-dark text-black font-semibold h-9">
+          <Button type="submit" className="w-full bg-luxury-gold hover:bg-luxury-gold-dark text-black font-semibold h-7 text-xs">
             Create Account
           </Button>
         </form>
         
-        <Separator className="my-4" />
+        <Separator className="my-2" />
         
-        <div className="space-y-2">
-          <Button variant="outline" className="w-full h-9 text-sm">
+        <div className="space-y-1">
+          <Button variant="outline" className="w-full h-6 text-[10px]">
             Continue with Google
           </Button>
-          <Button variant="outline" className="w-full h-9 text-sm">
+          <Button variant="outline" className="w-full h-6 text-[10px]">
             Continue with Apple
           </Button>
         </div>
       </CardContent>
       
-      <CardFooter className="text-center pt-0">
-        <p className="text-xs text-muted-foreground">
+      <CardFooter className="text-center pt-0 pb-2">
+        <p className="text-[10px] text-muted-foreground">
           Already have an account?{' '}
-          <Button variant="link" onClick={onSwitchToLogin} className="p-0 h-auto text-primary text-xs">
+          <Button variant="link" onClick={onSwitchToLogin} className="p-0 h-auto text-primary text-[10px]">
             Sign in
           </Button>
         </p>
