@@ -43,6 +43,9 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --luxury-gold: 45 86% 60%;
+    --luxury-gold-dark: 45 86% 50%;
   }
 
   .dark {
@@ -81,6 +84,9 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --luxury-gold: 45 86% 60%;
+    --luxury-gold-dark: 45 86% 50%;
   }
 }
 
@@ -117,5 +123,19 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+}
+
+@layer utilities {
+  .bg-luxury-gold {
+    background-color: hsl(var(--luxury-gold));
+  }
+  
+  .bg-luxury-gold-dark {
+    background-color: hsl(var(--luxury-gold-dark));
+  }
+  
+  .hover\:bg-luxury-gold-dark:hover {
+    background-color: hsl(var(--luxury-gold-dark));
   }
 }

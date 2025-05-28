@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from './ThemeToggle';
+import AuthModal from './AuthModal';
 
 interface NavbarProps {
   isDark: boolean;
@@ -41,12 +42,18 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
           {/* Right Side */}
           <div className="flex items-center space-x-4">
             <ThemeToggle isDark={isDark} onToggle={onThemeToggle} />
-            <Button variant="outline" className="hidden sm:inline-flex">
-              Sign In
-            </Button>
-            <Button className="bg-luxury-gold hover:bg-luxury-gold-dark text-black font-semibold">
-              Register
-            </Button>
+            
+            <AuthModal defaultView="login">
+              <Button variant="outline" className="hidden sm:inline-flex">
+                Sign In
+              </Button>
+            </AuthModal>
+            
+            <AuthModal defaultView="register">
+              <Button className="bg-luxury-gold hover:bg-luxury-gold-dark text-black font-semibold">
+                Register
+              </Button>
+            </AuthModal>
           </div>
         </div>
       </div>
