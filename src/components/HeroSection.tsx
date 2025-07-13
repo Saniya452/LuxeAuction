@@ -76,7 +76,7 @@ const HeroSection: React.FC = () => {
               {/* Car Image Container with Hover Effects */}
               <div className="car-hover relative z-10 rounded-2xl overflow-hidden bg-gradient-to-br from-black/20 to-transparent p-8">
                 <img
-                  src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                   alt="2022 McLaren P1 GTR"
                   className="w-full h-auto object-cover rounded-xl"
                 />
