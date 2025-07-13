@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import CountdownTimer from './CountdownTimer';
@@ -24,7 +23,7 @@ const HeroSection: React.FC = () => {
           
           {/* Left Content */}
           <div className="space-y-8 animate-slide-up">
-            <div className="space-y-4">
+            <div className="space-y-4 mt-10">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Own the <span className="gradient-text">Legend</span>.
                 <br />
@@ -71,7 +70,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Right Content - Featured Car */}
-          <div className="relative animate-scale-in z-30">
+          <div className="relative animate-scale-in z-30 mb-10 lg:mb-32 mt-2">
             <div className="relative group">
               {/* Car Image Container with Hover Effects */}
               <div className="car-hover relative z-10 rounded-2xl overflow-hidden bg-gradient-to-br from-black/20 to-transparent p-8">
@@ -107,11 +106,11 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-25">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-25">
         <div className="w-6 h-10 border-2 border-luxury-gold rounded-full flex justify-center">
           <div className="w-1 h-3 bg-luxury-gold rounded-full mt-2 animate-pulse" />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
